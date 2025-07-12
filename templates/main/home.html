@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>食材管理</title>
+</head>
+<body>
+    <h1>フードロス管理アプリ</h1>
+
+    <h2>📝 食材を登録</h2>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }} #フォームを段落形式で自動表示
+        <button type="submit">登録</button>
+    </form>
+
+    <h2>📋 登録済み食材一覧</h2>
+    <ul>
+        {% for item in food_items %}
+            <li>
+                <strong>{{ item.name }}</strong>({{ item.get_category_display }}):
+                消費期限 {{ item.expiration_date }}/
+                {{ item.quantity }}個/
+                {{ item.price }}円
+                {% if item.notes %}
+                    - {{ item.notes }}
+                {% endif %}
+                - <a href="{% url 'food_detail' item.id %}">詳細</a>
+            </li>
+        {% empty %}
+            <li>食材はまだ登録されていません。</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

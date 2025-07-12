@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{ food.name }} の詳細</title>
+</head>
+<body>
+    <h1>{{ food.name }} の詳細ページ</h1>
+
+    <ul>
+        <li>カテゴリ：{{ food.get_category_display }}</li>
+        <li>消費期限：{{ food.expiration_date }}</li>
+        <li>価格：{{ food.price }}円</li>
+        <li>個数：{{ food.quantity }}個</li>
+        <li>メモ：{{ food.notes|default:"（なし）" }}</li>
+        <li>残り日数：{{ food.days_left }} 日</li>
+    </ul>
+
+    <p><a href="{% url 'home' %}">← 戻る</a></p>
+</body>
+</html>
