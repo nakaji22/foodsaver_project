@@ -1,0 +1,22 @@
+{% extends "main/base.html" %}
+
+{% block title %}{{ month }}の食費分析{% endblock %}
+
+{% block content %}
+<h1>{{ month }}の食費分析</h1>
+
+<h2>カテゴリ別グラフ</h2>
+<img src="data:image/png;base64,{{ chart }}" alt="円グラフ">
+
+<h2>カテゴリごとの合計金額</h2>
+<ul>
+    {% for item in category_sums %}
+        <li>{{ item.category }}: {{ item.total }}円</li>
+    {% endfor %}
+</ul>
+
+<h2>全体の合計金額</h2>
+<p>{{ total_price }}円</p>
+
+<p><a href="{% url 'home' %}">← 戻る</a></p>
+{% endblock %}

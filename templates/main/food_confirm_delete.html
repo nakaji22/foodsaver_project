@@ -1,0 +1,13 @@
+{% extends "main/base.html" %}
+
+{% block title %}削除確認{% endblock %}
+
+{% block content %}
+<h1>食材削除の確認</h1>
+<p>本彼に "{{ food.name }}" を削除しますか？</p>
+<form method="post">
+    {% csrf_token %}
+    <button type="submit">はい、削除します</button>
+    <a href="{% url 'home' %}">キャンセル</a>
+</form>
+{% endblock %}

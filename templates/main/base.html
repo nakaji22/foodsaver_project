@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>フードロス管理アプリ</title>
+    <style>
+        body {
+            font-family: "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
+            background-color: #f9f9f9;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+        header, footer {
+            background-color: #d70035;
+            color: white;
+            text-align: center;
+            padding: 1rem;
+        }
+        main {
+            padding: 2rem;
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        h1, h2 {
+            color: #d70035;
+        }
+        form {
+            margin-bottom: 2rem;
+        }
+        button, a.button {
+            background-color: #d70035;
+            color: white;
+            padding: 0.5rem 1rem;
+            border: none;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            cursor: pointer;
+            display: inline-block;
+            margin-top: 0.5rem;
+        }
+        button:hover, a.button:hover {
+            background-color: #b0002c;
+        }
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+        li {
+            background-color: #f0f0f0;
+            padding: 1rem;
+            border-radius: 5px;
+            margin-bottom: 1rem;
+        }
+        .inline-links a {
+            margin-left: 0.5rem;
+            color: #d70035;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>フードロス管理アプリ</h1>
+    </header>
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+    <footer>
+        &copy; 2025 食品管理チーム
+    </footer>
+</body>
+</html>

@@ -1,0 +1,13 @@
+{% extends "main/base.html" %}
+
+{% block title %}食材編集{% endblock %}
+
+{% block content %}
+<h2>🍻 食材を編集</h2>
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">保存する</button>
+    <a href="{% url 'home' %}">戻る</a>
+</form>
+{% endblock %}
