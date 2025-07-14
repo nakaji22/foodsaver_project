@@ -1,1 +1,1 @@
-web: gunicorn foodsaver_project.wsgi
+web: gunicorn foodsaver.wsgi
