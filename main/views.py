@@ -14,7 +14,7 @@ from matplotlib import font_manager
 import io
 import base64
 
-
+@login_required(login_url='login')
 def home(request):
     # 登録フォーム処理
     if request.method == 'POST':
